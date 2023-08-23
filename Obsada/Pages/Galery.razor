@@ -1,0 +1,110 @@
+﻿@using BlazorStrap
+@using BlazorComponentUtilities
+@inject IBlazorStrap _blazorStrap
+@inject IJSRuntime JSRuntime
+@page "/gallery"
+<PageTitle>Томобсада - Наши работы</PageTitle>
+
+<div class="galery">
+    <div class="item1" style="background-color:white; text-align:center;margin:0;margin-top:1%;">
+        <h1 style="color:#3c1d17;margin-bottom:0;">Наши работы</h1>
+    </div>
+    <div class="slider">
+        <BSCarousel HasControls="true" HasIndicators="true" IsSlide="false" class="slider_left" style="">
+            <BSCarouselItem>
+                <img style="object-fit:cover; width:100%;cursor:pointer" src="/Images/Gallery/ZAGS.jpg"  @onclick="@(() =>{Source = "/Images/Gallery/ZAGS.jpg";Open();})"/>
+            </BSCarouselItem>
+            <BSCarouselItem>
+                <img style="object-fit:cover; width:100%;cursor:pointer" src="/Images/Gallery/ZAGS2.jpg" @onclick="@(() =>{Source = "/Images/Gallery/ZAGS2.jpg";Open();})" />
+            </BSCarouselItem>
+            <BSCarouselItem>
+                <img style="object-fit:cover; width:100%;cursor:pointer" src="/Images/Gallery/ZAGS3.jpg" @onclick="@(() =>{Source = "/Images/Gallery/ZAGS3.jpg";Open();})" />
+            </BSCarouselItem>
+            <BSCarouselItem>
+                <img style="object-fit:cover; width:100%;cursor:pointer" src="/Images/Gallery/ZAGS4.jpg" @onclick="@(() =>{Source = "/Images/Gallery/ZAGS3.jpg";Open();})" />
+            </BSCarouselItem>
+        </BSCarousel>
+        <h3 class="slider_h_left" style="">Дворец бракосочетания города Томска</h3>
+    </div>
+
+    <div class="slider">
+        <BSCarousel HasControls="true" HasIndicators="true" IsSlide="false" class="slider_right">
+            <BSCarouselItem>
+                <img style="object-fit:cover; width:100%;cursor:pointer" src="/Images/Gallery/TUSUR.jpg" @onclick="@(() =>{Source = "/Images/Gallery/TUSUR.jpg";Open();})" />
+            </BSCarouselItem>
+            <BSCarouselItem>
+                
+                <img style="object-fit:cover; width:100%;cursor:pointer" src="/Images/Gallery/TUSUR2.jpg" @onclick="@(() =>{Source = "/Images/Gallery/TUSUR2.jpg";Open();})"/>
+            </BSCarouselItem>
+        </BSCarousel>
+        <h3 class="slider_h_right" style="">ТУСУР главный корпус</h3>
+
+    </div>
+    <div class="item1"><hr style="" /></div>
+    <div class="prev_after_mini">
+        <h3>До - После</h3>
+    </div>
+    <div class="prev_after">
+        <h3>До</h3>
+        <img style="object-fit:cover; width:100%" src="/Images/Gallery/Do1.jpg" @onclick="@(() =>{Source = "/Images/Gallery/Do1.jpg";Open();})" />
+    </div>
+    <div class="prev_after">
+        <h3>После</h3>
+        <img style="object-fit:cover; width:100%" src="/Images/Gallery/Posle1.jpg" @onclick="@(() =>{Source = "/Images/Gallery/Posle1.jpg";Open();})" />
+    </div>
+    <div class="prev_after">
+        <img style="object-fit:cover; width:100%" src="/Images/Gallery/Do2.jpg" @onclick="@(() =>{Source = "/Images/Gallery/Do1.jpg";Open();})" />
+    </div>
+    <div class="prev_after">
+        <img style="object-fit:cover; width:100%" src="/Images/Gallery/Posle2.jpg" @onclick="@(() =>{Source = "/Images/Gallery/Posle2.jpg";Open();})" />
+    </div >
+    <div class="prev_after">
+        <img style="object-fit:cover; width:100%" src="/Images/Gallery/Do3.jpg" @onclick="@(() =>{Source = "/Images/Gallery/Do3.jpg";Open();})" />
+    </div>
+    <div class="prev_after">
+        <img style="object-fit:cover; width:100%" src="/Images/Gallery/Posle3.jpg" @onclick="@(() =>{Source = "/Images/Gallery/Posle3.jpg";Open();})" />
+    </div>
+    <div class="item1"><hr/></div> 
+</div>
+<div class="galery2">
+    <div class="item2" style="background-color:white; text-align:center;margin:0;margin-top:0px;">
+        <h1 style="color:#3c1d17;">Еще немного наших работ</h1>
+    </div>
+    <div class="prev_after">
+        <img style=" width:100%" src="/Images/Gallery/last1.jpg" @onclick="@(() =>{Source = "/Images/Gallery/last1.jpg";Open();})" />
+    </div>
+    <div class="prev_after">
+        <img style=" width:100%" src="/Images/Gallery/last2.jpg" @onclick="@(() =>{Source = "/Images/Gallery/last2.jpg";Open();})" />
+    </div>
+    <div class="prev_after">
+        <img style=" width:100%" src="/Images/Gallery/last3.jpeg" @onclick="@(() =>{Source = "/Images/Gallery/last3.jpeg";Open();})" />
+    </div>
+    <div class="prev_after">
+        <img style=" width:100%" src="/Images/Gallery/last4.jpeg" @onclick="@(() =>{Source = "/Images/Gallery/last4.jpeg";Open();})" />
+    </div>
+    <div class="prev_after">
+        <img style=" width:100%" src="/Images/Gallery/last5.jpeg" @onclick="@(() =>{Source = "/Images/Gallery/last5.jpeg";Open();})" />
+    </div>
+    <div class="prev_after">
+        <img style=" margin-bottom:10%; width:100%" src="/Images/Gallery/last6.jpeg" @onclick="@(() =>{Source = "/Images/Gallery/last6.jpeg";Open();})" />
+    </div>
+</div>
+
+<BSModal @ref="modal" IsCentered="true">
+    <Header></Header>
+    <Content>
+        <img style="width:100%" src="@Source" />
+    </Content>
+</BSModal>
+@code {
+    private BSModal? modal = default!;
+    public string Source = "";
+    public async void Open()
+    {
+        if (modal != null)
+        {
+            await modal.ShowAsync();
+        }
+
+    }
+}

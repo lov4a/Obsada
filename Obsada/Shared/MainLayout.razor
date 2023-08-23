@@ -1,0 +1,42 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>Obsada</PageTitle>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<div class="page">
+    <main>
+        <div class="head" style="border-top: 8px solid #3c1d17">
+            <div class="logo"><img style="" src="/Images/Logo-White_Obvodka-03.svg" /></div>
+            <h1 class="" style="color:white">ТОМОБСАДА</h1>
+            <h1 style="padding-bottom:0.5%;color:white">| Обсады | Колоды | Окосячка |</h1>
+        </div>
+        <div class="menu_bar" style="background-color: #b63d32;border-top: 8px solid #3c1d17; border-bottom:8px solid #3c1d17; text-align:center;">
+            <NavLink class="menu" href="" Match="NavLinkMatch.All">
+                <span  aria-hidden="true" style="margin-top:5px"></span> Главная
+            </NavLink>
+            <NavLink class="menu" href="gallery" style="">
+                <span  aria-hidden="true" style="color:white"></span> Наши работы
+            </NavLink>
+            <NavLink class="menu" href="contacts" style="">
+                <span aria-hidden="true" style=""></span> Контакты
+            </NavLink>
+        </div>
+        <article class="content" style="">
+            @Body
+        </article>
+        <footer class="border-top footer text-muted" style="background-image: url('css/Background/background.jpg');border-top:none;">
+            <div class="main_info" style="margin:0">
+            <img style="width:3%;margin-top:4px;" src="/Images/Logo-White_Obvodka-03.svg"/>
+            <div class="footer_info">
+                            <h3 style="margin-bottom: 10px;color:white">Бесплатные консультации!</h3>
+            <h2 style="color:white;font-weight:bold">Звоните: 32-64-75</h2>
+            <div class="author" style="width:100%;text-align:center;background-color:#3c1d17">
+                    <p align="center" style="color:white; margin-bottom:0; padding:0"> &copy; 2023 - Владислав Ловчановский</p>
+            </div>
+
+            </div>
+            
+        </div>
+    </footer>
+    </main>
+</div>
